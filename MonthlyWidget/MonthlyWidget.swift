@@ -59,25 +59,35 @@ struct MonthlyWidgetEntryView : View {
     var body: some View {
         
         ZStack{
-            ContainerRelativeShape()
-                .fill(config.backgroundColor)
+            Image(config.backGroundImage)
+                .resizable()
+                .scaledToFit()
+//            ContainerRelativeShape()
+            //                .fill(config.backgroundColor)
             VStack{
-                HStack(spacing: 4){
-                    Text(config.emojiText)
-                        .font(.title)
-                    Text(entry.date.weekDisplayFormat)
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .scaledToFit()
-                        .minimumScaleFactor(0.4)
-                        .foregroundStyle(config.weekdayTextColor)
+                Spacer()
+                HStack(){
                     Spacer()
+                    VStack(spacing: 0){
+                        Spacer()
+                        
+                        Text(entry.date.weekDisplayFormat)
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .scaledToFit()
+                            .minimumScaleFactor(0.3)
+                            .foregroundStyle(config.weekdayTextColor)
+                            .shadow(color: config.dayTextColor, radius: 1, x: 1, y: 1)
+                        
+                        Text(entry.date.dayDisplayFormat)
+                            .font(.system(size: 60, weight: .heavy))
+                            .foregroundStyle(config.dayTextColor)
+                            .shadow(color: config.weekdayTextColor, radius: 1, x: 1, y: 1)
+                    }
+                    .padding()
                 }
-                Text(entry.date.dayDisplayFormat)
-                    .font(.system(size: 80, weight: .heavy))
-                    .foregroundStyle(config.dayTextColor)
             }
-            .padding()
+            //  .padding()
             
         }
     }
@@ -100,9 +110,39 @@ struct MonthlyWidget: Widget {
 
 struct MonthlyWidget_Previews: PreviewProvider {
     static var previews: some View {
-        MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 1, day: 12)))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        Group{
+            Group{
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 1, day: 12)))
+                    .previewContext(WidgetPreviewContext(family: .systemSmall))
+               
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 2, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 3, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 4, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            }
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 5, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 6, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 7, day: 31)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 8, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 9, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 10, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 11, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            MonthlyWidgetEntryView(entry: DayEntry(date: dateToDisplay(month: 12, day: 12)))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+           
+            
+        }
     }
+    
     
     static func dateToDisplay(month: Int, day: Int) -> Date {
         let components = DateComponents(calendar: Calendar.current,
@@ -116,7 +156,7 @@ struct MonthlyWidget_Previews: PreviewProvider {
 
 extension Date {
     var weekDisplayFormat: String {
-        self.formatted(.dateTime.weekday(.wide))
+        self.formatted(.dateTime.weekday(.abbreviated))
     }
 }
 

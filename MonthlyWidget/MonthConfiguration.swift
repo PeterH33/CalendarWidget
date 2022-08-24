@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct MonthConfig {
-    let backgroundColor: Color
+    let backGroundImage: String
     let emojiText: String
     let weekdayTextColor: Color
     let dayTextColor: Color
@@ -19,67 +19,67 @@ struct MonthConfig {
         
         switch monthInt {
         case 1:
-            return MonthConfig(backgroundColor: .gray,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "⛄️",
-                               weekdayTextColor: .black.opacity(0.6),
-                               dayTextColor: .white.opacity(0.8))
+                               weekdayTextColor: .black.opacity(0.8),
+                               dayTextColor: .red.opacity(0.9))
         case 2:
-            return MonthConfig(backgroundColor: .palePink,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "❤️",
-                               weekdayTextColor: .black.opacity(0.5),
-                               dayTextColor: .pink.opacity(0.8))
+                               weekdayTextColor: .white.opacity(0.8),
+                               dayTextColor: .pink.opacity(0.9))
         case 3:
-            return MonthConfig(backgroundColor: .paleGreen,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "☘️",
-                               weekdayTextColor: .black.opacity(0.7),
-                               dayTextColor: .darkGreen.opacity(0.8))
+                               weekdayTextColor: .white.opacity(0.9),
+                               dayTextColor: .green.opacity(0.9))
         case 4:
-            return MonthConfig(backgroundColor: .paleBlue,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "☔️",
-                               weekdayTextColor: .black.opacity(0.5),
-                               dayTextColor: .purple.opacity(0.8))
+                               weekdayTextColor: .white.opacity(0.9),
+                               dayTextColor: .purple.opacity(0.9))
         case 5:
-            return MonthConfig(backgroundColor: .paleYellow,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "🌺",
-                               weekdayTextColor: .black.opacity(0.5),
+                               weekdayTextColor: .white.opacity(0.9),
                                dayTextColor: .pink.opacity(0.7))
         case 6:
-            return MonthConfig(backgroundColor: .skyBlue,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "🌤",
-                               weekdayTextColor: .black.opacity(0.5),
-                               dayTextColor: .paleYellow.opacity(0.8))
+                               weekdayTextColor: .black.opacity(0.7),
+                               dayTextColor: .paleYellow.opacity(0.9))
         case 7:
-            return MonthConfig(backgroundColor: .blue,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "🏖",
-                               weekdayTextColor: .black.opacity(0.5),
-                               dayTextColor: .paleBlue.opacity(0.8))
+                               weekdayTextColor: .black.opacity(0.9),
+                               dayTextColor: .paleBlue.opacity(0.9))
         case 8:
-            return MonthConfig(backgroundColor: .paleOrange,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "☀️",
-                               weekdayTextColor: .black.opacity(0.5),
+                               weekdayTextColor: .black.opacity(0.7),
                                dayTextColor: .darkOrange.opacity(0.8))
         case 9:
-            return MonthConfig(backgroundColor: .paleRed,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "🍁",
-                               weekdayTextColor: .black.opacity(0.5),
-                               dayTextColor: .paleYellow.opacity(0.9))
+                               weekdayTextColor: .white.opacity(0.9),
+                               dayTextColor: .red.opacity(0.9))
         case 10:
-            return MonthConfig(backgroundColor: .black,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "👻",
-                               weekdayTextColor: .white.opacity(0.6),
-                               dayTextColor: .orange.opacity(0.8))
+                               weekdayTextColor: .black.opacity(0.9),
+                               dayTextColor: .darkOrange.opacity(0.9))
         case 11:
-            return MonthConfig(backgroundColor: .paleBrown,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "🦃",
-                               weekdayTextColor: .black.opacity(0.6),
-                               dayTextColor: .black.opacity(0.6))
+                               weekdayTextColor: .white.opacity(0.9),
+                               dayTextColor: .black.opacity(0.9))
         case 12:
-            return MonthConfig(backgroundColor: .paleRed,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "🎄",
                                weekdayTextColor: .white.opacity(0.9),
-                               dayTextColor: .darkGreen.opacity(0.7))
+                               dayTextColor: .black.opacity(0.9))
         default:
-            return MonthConfig(backgroundColor: .gray,
+            return MonthConfig(backGroundImage: String(monthInt),
                                emojiText: "📅",
                                weekdayTextColor: .black.opacity(0.6),
                                dayTextColor: .white.opacity(0.8))
